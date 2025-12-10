@@ -1,0 +1,86 @@
+/* Import font mirip tulisan tangan */
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap');
+
+body {
+    font-family: 'Kalam', cursive;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; 
+}
+
+.card-container {
+    text-align: center;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.text-message {
+    color: #ff69b4; /* Pink */
+    font-size: 3.5em;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    animation: textWiggle 2s ease-in-out infinite alternate;
+}
+
+.text-message span {
+    display: block;
+}
+
+/* Gaya untuk Katak */
+.frog-party {
+    font-size: 10em;
+    animation: frogHop 1.5s infinite alternate ease-in-out;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+}
+
+.party-hat {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-10deg);
+    color: #ff4500; 
+    font-size: 0.3em;
+    animation: hatRotate 3s infinite linear;
+}
+
+/* ANIMASI */
+@keyframes textWiggle {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(5px); }
+}
+
+@keyframes frogHop {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-25px) rotate(5deg); }
+    100% { transform: translateY(0) rotate(-5deg); }
+}
+
+@keyframes hatRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Gaya Confetti (JavaScript akan membuatnya) */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f00; 
+    border-radius: 50%;
+    pointer-events: none; 
+    opacity: 0;
+    animation: fall 3s ease-in forwards;
+}
+
+@keyframes fall {
+    0% { opacity: 1; transform: translateY(-10vh) rotate(0deg); }
+    100% { opacity: 0; transform: translateY(100vh) rotate(720deg); }
+}
